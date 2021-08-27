@@ -27,16 +27,22 @@ function gotPoses(results)
     console.log(results);
     noseX = results[0].pose.nose.x;
     noseY = results[0].pose.nose.y;
-    console.log("noseX = " + noseX +" noseY = " + noseY);
+    console.log("noseX = " + noseX + "noseY = " + noseY);
 
     leftWristX = results[0].pose.leftWrist.x;
     rightWristX = results[0].pose.rightWrist.x;
     difference = floor(leftWristX - rightWristX);
 
-    console.log("leftWristX  = " + leftWristX  + " rightWristX = "+ rightWristX + " difference = " + difference);
+    console.log("leftWrist = " + leftWristX + "rightWrist = " + rightWristX + "difference =" + difference );
   }
 }
 
 function draw() {
-background('#969A97');
+background('#0B0B45');
+document.getElementById("font_size").innerHTML="font size of the text will be"+difference+ "px";  
+  fill('#00FFFF');
+  textSize(difference);
+  text('Zainab',noseX, noseY);
+
+
 }
